@@ -1,4 +1,9 @@
-export type NotificationStatus = 'PENDING' | 'SENT' | 'FAILED';
+export enum NotificationStatus {
+  PENDING = 'PENDING',
+  SENT = 'SENT',
+  FAILED = 'FAILED'
+}
+
 export interface Notification {
   id: string;
   title: string;

@@ -20,4 +20,5 @@ export async function getNotificationsController( res: Response) {
 }
 export async function updateNotificationController() {
   const NotificationStatus = await updateNotificationService
+  return 
 }

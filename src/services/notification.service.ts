@@ -8,7 +8,7 @@ export async function createNotificationService(title: string, message: string) 
     id: randomUUID(),
     title,
     message,
-    status: 'PENDING',
+    status: NotificationStatus.PENDING,
     createdAt: new Date().toISOString(),
   };
   // 🔹 Salvar como hash
