@@ -1,4 +1,4 @@
-export type NotificationStatus = 'PENDING' | 'PROCESSED';
+export type NotificationStatus = 'PENDING' | 'SENT' | 'FAILED';
 export interface Notification {
   id: string;
   title: string;
