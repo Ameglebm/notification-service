@@ -76,3 +76,5 @@ sudo systemctl status redis-server
 
 redis-cli ping
 PONG
+
+adicione essas coisas

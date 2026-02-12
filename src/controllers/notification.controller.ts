@@ -20,6 +20,5 @@ export async function postNotification(req: Request, res: Response) {
 
 export async function getNotifications(req: Request, res: Response) {
   const notifications = await getNotificationsService()
-
   return res.json(notifications)
 }

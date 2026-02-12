@@ -3,7 +3,7 @@ import { getNotifications, postNotification } from '../controllers/notification.
 
 const router = Router();
 
-router.post('/notifications', postNotification);
+router.post('/', postNotification);
 router.get('/', getNotifications)
 
 export default router;
