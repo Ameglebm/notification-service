@@ -13,7 +13,6 @@ export async function createNotification(title: string, message: string) {
     status: 'PENDING',
     createdAt: new Date().toISOString(),
   };
-
   // 🔹 Salvar como hash
   await redis.hset(`notification:${notification.id}`, {
     id: notification.id,
@@ -31,10 +30,18 @@ export async function createNotification(title: string, message: string) {
 
   return notification;
 }
-
 export async function getNotificationsService() {
-  const notifications = await redis.lrange('notifications_queue', 0, -1)
+  // Pegar todos os IDs
+  const ids = await redis.lrange(STORAGE_KEY, 0, -1);
+  const notifications = [];
+  for (const id of ids) {
+    const data = await redis.hgetall(`notification:${id}`);
 
-  return notifications.map((item) => JSON.parse(item))
+    if (Object.keys(data).length > 0) {
+      notifications.push(data);
+    }
+  }
+  return notifications;
 }
+
 
