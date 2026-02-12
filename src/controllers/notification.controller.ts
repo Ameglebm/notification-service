@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { createNotification } from '../services/notification.service';
+import { createNotification, getNotificationsService } from '../services/notification.service';
 
 export async function postNotification(req: Request, res: Response) {
   const { title, message } = req.body;
@@ -16,4 +16,10 @@ export async function postNotification(req: Request, res: Response) {
     message: 'Notification queued',
     id: notification.id,
   });
+}
+
+export async function getNotifications(req: Request, res: Response) {
+  const notifications = await getNotificationsService()
+
+  return res.json(notifications)
 }

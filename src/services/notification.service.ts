@@ -31,3 +31,10 @@ export async function createNotification(title: string, message: string) {
 
   return notification;
 }
+
+export async function getNotificationsService() {
+  const notifications = await redis.lrange('notifications_queue', 0, -1)
+
+  return notifications.map((item) => JSON.parse(item))
+}
+
