@@ -5,6 +5,7 @@ Content-Type: application/json
 ### Criar Notificação
 POST http://localhost:3001/notifications
 Content-Type: application/json
+
 {
   "title": "Teste Worker",
   "message": "Processando fila Redis"
@@ -15,9 +16,9 @@ GET http://localhost:3001/notifications
 Content-Type: application/json
 
 ### Atualziar Status
-PATCH http://localhost:3001/notifications
+PATCH http://localhost:3001/notifications/{id}
 Content-Type: application/json
+
 {
-  "status": "SENT",
-  "messge": "Atualizado Status"
+  "status": "SENT"
 }

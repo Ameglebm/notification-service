@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { createNotificationService, getNotificationsService, updateNotificationService } from '../services/notification.service';
+import { Params } from '../types/notifications'
 
 export async function postNotificationController(req: Request, res: Response) {
   const { title, message } = req.body;
@@ -19,7 +20,7 @@ export async function getNotificationsController( req: Request, res: Response) {
   return res.json(notifications)
 }
 export async function updateNotificationController(
-  req: Request,
+  req: Request<Params>,
   res: Response
 ) {
   const { id } = req.params;
@@ -27,6 +28,6 @@ export async function updateNotificationController(
 
   await updateNotificationService(id, status);
 
-  return res.json({ message: 'Status updated' });
+  return res.json({ message: 'Updated successfully' });
 }
 

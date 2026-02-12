@@ -11,3 +11,7 @@ export interface Notification {
   status: NotificationStatus;
   createdAt: string;
 }
+
+export interface Params {
+  id: string;
+}
