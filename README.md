@@ -13,5 +13,38 @@ criar:
         server.ts
         app.ts
 Erro é clássico de conflito entre CommonJS e ESModules no TypeScript 5+.
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "CommonJS",
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    "strict": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  }
+}
+Adiconar esse packjson
+
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "CommonJS",
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    "strict": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  }
+}
+tsConfig
 
 Depois criar o app e o server
