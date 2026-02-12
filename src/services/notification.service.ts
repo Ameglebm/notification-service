@@ -1,9 +1,9 @@
 import { redis } from '../config/redis';
 import { randomUUID } from 'crypto';
-import { Notification } from '../types/notifications';
+import { Notification, NotificationStatus } from '../types/notifications';
 const QUEUE_NAME = 'notification_queue';
 const STORAGE_KEY = 'notifications';
-export async function createNotification(title: string, message: string) {
+export async function createNotificationService(title: string, message: string) {
   const notification: Notification = {
     id: randomUUID(),
     title,
@@ -38,5 +38,12 @@ export async function getNotificationsService() {
   }
   return notifications;
 }
+export async function updateNotificationService(
+  id: string,
+  status: NotificationStatus
+) {
+  await redis.hset(`notification:${id}`, 'status', status);
+}
+
 
 

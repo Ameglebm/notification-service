@@ -1,6 +1,7 @@
 import { Router } from 'express';
-import { getNotifications, postNotification } from '../controllers/notification.controller';
+import { getNotificationsController, postNotificationController, updateNotificationController } from '../controllers/notification.controller';
 const router = Router();
-router.post('/notifications', postNotification);
-router.get('/notifications', getNotifications)
+router.post('/notifications', postNotificationController);
+router.get('/notifications', getNotificationsController)
+router.patch('/notifications', updateNotificationController)
 export default router;
