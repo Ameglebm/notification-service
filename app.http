@@ -7,8 +7,8 @@ POST http://localhost:3001/notifications
 Content-Type: application/json
 
 {
-  "title": "Teste Worker",
-  "message": "Processando fila Redis"
+  "title": "TESTEI TUDO AGORA",
+  "message": "BACKEND"
 }
 
 ### Listar Notificações
