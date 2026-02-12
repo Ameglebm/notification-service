@@ -14,11 +14,19 @@ export async function postNotificationController(req: Request, res: Response) {
     id: notification.id,
   });
 }
-export async function getNotificationsController( res: Response) {
+export async function getNotificationsController( req: Request, res: Response) {
   const notifications = await getNotificationsService()
   return res.json(notifications)
 }
-export async function updateNotificationController() {
-  const NotificationStatus = await updateNotificationService
-  return 
+export async function updateNotificationController(
+  req: Request,
+  res: Response
+) {
+  const { id } = req.params;
+  const { status } = req.body;
+
+  await updateNotificationService(id, status);
+
+  return res.json({ message: 'Status updated' });
 }
+

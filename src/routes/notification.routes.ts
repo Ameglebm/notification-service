@@ -3,5 +3,5 @@ import { getNotificationsController, postNotificationController, updateNotificat
 const router = Router();
 router.post('/notifications', postNotificationController);
 router.get('/notifications', getNotificationsController)
-router.patch('/notifications', updateNotificationController)
+router.patch('/notifications/:id', updateNotificationController)
 export default router;

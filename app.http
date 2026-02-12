@@ -2,19 +2,22 @@
 GET http://localhost:3001/health
 Content-Type: application/json
 
-###
-
 ### Criar Notificação
 POST http://localhost:3001/notifications
 Content-Type: application/json
-
 {
   "title": "Teste Worker",
   "message": "Processando fila Redis"
 }
 
-###
-
 ### Listar Notificações
 GET http://localhost:3001/notifications
 Content-Type: application/json
+
+### Atualziar Status
+PATCH http://localhost:3001/notifications
+Content-Type: application/json
+{
+  "status": "SENT",
+  "messge": "Atualizado Status"
+}
