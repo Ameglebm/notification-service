@@ -14,37 +14,24 @@ criar:
         app.ts
 Erro é clássico de conflito entre CommonJS e ESModules no TypeScript 5+.
 {
-  "compilerOptions": {
-    "target": "ES2020",
-    "module": "CommonJS",
-    "rootDir": "./src",
-    "outDir": "./dist",
-
-    "strict": true,
-    "esModuleInterop": true,
-    "moduleResolution": "node",
-
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+  "name": "notification-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.2.3",
+    "express": "^5.2.1",
+    "ts-node-dev": "^2.0.0"
   }
 }
-Adiconar esse packjson
-
-{
-  "compilerOptions": {
-    "target": "ES2020",
-    "module": "CommonJS",
-    "rootDir": "./src",
-    "outDir": "./dist",
-
-    "strict": true,
-    "esModuleInterop": true,
-    "moduleResolution": "node",
-
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
-  }
-}
-tsConfig
+package.json
 
 Depois criar o app e o server
